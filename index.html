@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html onselectstart="return false">
+    <head>
+        <meta charset="utf-8">
+        <title>Sonolus Studio</title>
+        <link rel="icon" href="favicon.png" />
+        <link rel="stylesheet" href="sonolus.css" />
+        <link rel="stylesheet" href="toggle.css" />
+        <link rel="stylesheet" href="filesystem.css" />
+        <link rel="stylesheet" href="index.css" />
+        <script src="sonolus.js"></script>
+        <script src="toggle.js"></script>
+        <script src="srp.js"></script>
+        <script src="filesystem.js"></script>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <nav class="flex" id="toggleRoot" style="opacity: 0;"></nav>
+        <div id="main" class="flex">
+            <div id="folder-0-root" style="width: 15%;" opened="1">
+                
+            </div>
+            <script>
+                addLoadEvent(function(){
+                    addFolder("0", "root", "skin", skinIcon, "皮肤 (0)", [
+                        {icon: addIcon, func: skinFunction.create},
+                        {icon: deleteIcon, func: skinFunction.clear},
+                    ]);
+                    addFolder("0", "root", "background", backgroundIcon, "背景 (0)", [
+                        {icon: addIcon, func: backgroundFunction.create},
+                        {icon: deleteIcon, func: backgroundFunction.clear},
+                    ]);
+                    addFolder("0", "root", "effect", effectIcon, "音效 (0)", [
+                        {icon: addIcon, func: effectFunction.create},
+                        {icon: deleteIcon, func: effectFunction.clear},
+                    ]);
+                    addFolder("0", "root", "particle", particleIcon, "粒子效果 (0)", [
+                        {icon: addIcon, func: particleFunction.create},
+                        {icon: deleteIcon, func: particleFunction.clear},
+                    ]);
+                })
+            </script>
+            <div id="main" style="width: 85%; height: calc(100vh - 35px)">
+                <div id="start" class="flex">
+                    <h2>Sonolus Studio</h2>
+                    <p>Version v1.0.0</p>
+                    <h6>For Sonolus v0.7.2</h6>
+                    <br><br>
+                    <p>使用左侧的项目管理器来开始创作</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
